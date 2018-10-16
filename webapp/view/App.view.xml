@@ -1,0 +1,39 @@
+<mvc:View controllerName="de.blogspot.openui5.adb.controller.App" displayBlock="true" height="100%"
+	xmlns:adbc="de.blogspot.openui5.adb.control" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page enableScrolling="false">
+		<customHeader>
+			<Toolbar class="HeaderToolbar" design="Transparent">
+				<Title text="{description}" titleStyle="H3"/>
+				<ToolbarSpacer/>
+				<ToolbarSpacer/>
+				<!--<Button id="FilterButton" icon="sap-icon://filter" press="onFilter"/>-->
+				<ToggleButton id="FavoriteToggle" icon="sap-icon://favorite" press="onFavoriteToggle"/>
+				<SearchField id="SearchField" liveChange="onSearch" width="320px" placeholder="search in {ui>/total} games..."/>
+			</Toolbar>
+		</customHeader>
+		<FlexBox width="100%" height="100%" alignItems="Center" justifyContent="Center" renderType="Bare">
+			<HBox class="InnerContent" width="1024px" height="720px">
+				<VBox class="ArcadeCabinet" width="680px" alignItems="Center" renderType="Bare">
+					<Image class="Marquee" mode="Background" backgroundSize="contain" backgroundPosition="center" width="93%" height="205px"
+						densityAware="false" src="http://adb.arcadeitalia.net/media/mame.current/marquees/{name}.png"/>
+					<adbc:YTPlayer class="Video" videoId="{url_shortplays}"/>
+					<Text class="Info" text="{manufacturer} {year}, {screen_orientation} ({display_width} x {display_height}), {name}"/>
+				</VBox>
+				<Page showHeader="false">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+					<List id="List" growing="true" growingThreshold="25" growingScrollToLoad="true" backgroundDesign="Transparent" showSeparators="None"
+						items="{ path: '/', filters: [{ path: 'decals', operator: 'EQ', value1: true}]}" selectionChange="onSelectionChange"
+						mode="SingleSelectMaster" updateFinished="onUpdateFinished">
+						<CustomListItem>
+							<Image class="sapUiSmallMarginTopBottom" mode="Background" width="100%" height="2.3rem" densityAware="false" backgroundSize="contain"
+								backgroundPosition="center" src="http://adb.arcadeitalia.net/media/mame.current/decals/{name}.png"/>
+							<!--<Title class="sapUiTinyMarginTop" width="100%" textAlign="Center" xtext="{description}" text="{name}"/>-->
+						</CustomListItem>
+					</List>
+				</Page>
+			</HBox>
+		</FlexBox>
+	</Page>
+</mvc:View>

@@ -1,0 +1,77 @@
+/* hide branding bar */
+.sapMShellBrandingBar {
+	visibility: hidden;
+}
+
+/* disable shell background to show background image  */
+.sapContrast.sapMShellGlobalInnerBackground, 
+.sapContrast .sapMShellGlobalInnerBackground {
+    background-color: transparent;
+}
+
+.sapContrast .HeaderToolbar.sapMTB, 
+.sapContrast .HeaderToolbar.sapMTB {
+	background-color: rgba(0,0,0,0.4);
+	border: 0;
+}
+
+.sapContrast .sapMLIB {
+	-webkit-transition: -webkit-transform 0.3s ease;
+	-moz-transition: -moz-transform 0.3s ease;
+	transition: transform 0.3s ease;
+}
+
+.sapContrast.sapMLIBHoverable:hover, 
+.sapContrast .sapMLIBHoverable:hover {
+	background-color: transparent;
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	transform: scale(1.5);
+	outline: 0;
+}
+
+.sapContrast.sapMLIB.sapMLIBSelected, 
+.sapContrast .sapMLIB.sapMLIBSelected {
+    background-color: rgba(0,0,0,0.5);
+    background-color: transparent;
+    -webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	transform: scale(1.5);
+	outline: 0;
+}
+
+.sapContrast.sapMLIBHoverable.sapMLIBSelected:hover, 
+.sapContrast .sapMLIBHoverable.sapMLIBSelected:hover {
+    background-color: transparent;
+}
+
+.InnerContent {
+	background-color: rgba(0,0,0,0.4) !important;
+	border-radius: 0.5rem;
+}
+
+.ArcadeCabinet {
+    background-image: url(../mime/ArcadeBartop.png);
+    background-repeat: no-repeat;
+    background-size: 82vh auto;
+    xbackground-size: 100% auto;
+    xbackground-size: 700px auto;
+    background-size: auto 100%;
+    background-position: bottom left;
+}
+
+.Marquee {
+	background-color: black;
+	margin-top: 0rem;
+}
+
+.ytplayer {
+    margin-top: 2.7rem;
+    width: 430px;
+    height: 322px;
+}
+
+.Info {
+	position: absolute;
+	bottom: 0.375rem;
+}
